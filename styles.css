@@ -1,86 +1,208 @@
+/*
+|--------------------------------------------------------------------------
+| AESTHETIC REVISION: 'The Mighty Chihuahua'
+| Theme: Warm, modern, playful, and clean.
+|--------------------------------------------------------------------------
+*/
+
 /* GLOBAL SETTINGS */
+:root {
+    --color-primary: #ff7f50; /* Coral/Cheery Orange for highlights */
+    --color-secondary: #4a4a4a; /* Darker text for readability */
+    --color-background: #f7f7f7; /* Very light, soft gray */
+    --color-card-border: #e0e0e0; /* Subtle border for cards */
+    --color-header: #34495e; /* Dark slate blue for header */
+    --font-heading: 'Kalam', cursive; /* Fun, bold heading font */
+    --font-body: 'Poppins', sans-serif; /* Clean, modern body font */
+}
+
 body {
-    background-color: #e8f5e9; /* Very light mint green */
-    color: #1b5e20; /* Dark forest green for text */
-    font-family: 'Verdana', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-secondary);
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
     text-align: center;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+    color: var(--color-header);
+    margin-top: 0;
 }
 
 header {
-    background-color: #4caf50; /* Standard Green */
+    background-color: var(--color-header);
     color: white;
-    padding: 2rem;
-    border-bottom: 5px solid #2e7d32;
+    padding: 3rem 1rem;
+    /* Soft gradient for a little depth */
+    background-image: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* CARDS (The white boxes) */
+header h1 {
+    color: white; /* Override h1 color for header */
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+main {
+    padding: 20px;
+}
+
+/* CARDS (The main content containers) */
 .card {
     background-color: white;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 600px;
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: 2px solid #a5d6a7;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 650px;
+    border-radius: 15px; /* Softer rounded corners */
+    /* Elevated, subtle box shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 0 5px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-card-border);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card p {
+    text-align: left;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--color-card-border);
+}
+
+.profile-card p:last-of-type {
+    border-bottom: none;
 }
 
 /* IMAGES */
 img {
     max-width: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
+    display: block; /* Removes extra space below images */
+    margin: 0 auto;
 }
 
+/* Main Profile Picture */
 .main-photo {
-    /* Makes the main profile picture a circle */
-    border-radius: 50%; 
-    border: 5px solid #81c784;
-    width: 200px;
-    height: 200px;
+    /* Retain circle shape */
+    border-radius: 50%;
+    border: 5px solid var(--color-primary); /* Pop of color border */
+    width: 180px;
+    height: 180px;
     object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 8px rgba(255, 127, 80, 0.2); /* Outer halo glow */
 }
 
-/* THE "BEAN" THEME */
+/* THE "BEAN" GALLERY */
 .gallery-grid {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px; /* Increased gap */
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .gallery-item {
-    width: 30%;
+    width: 100%; /* Default for small screens */
+    max-width: 150px; /* Max size for larger screens */
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-header);
+    padding: 5px;
 }
 
-/* Making the button look like a Kidney Bean */
+.gallery-item img {
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Subtle zoom on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* INTERACTIVE ZONE BUTTON */
+.interactive-zone {
+    background-color: #fff9e6; /* Light, warm background for this section */
+    border: 1px solid #ffcc80; /* Light orange border */
+}
+
 .bean-button {
-    background-color: #2e7d32;
+    background-color: var(--color-primary); /* Coral color */
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
     border: none;
-    padding: 15px 40px;
+    padding: 20px 50px; /* Larger hit area */
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.2s ease-out;
+    letter-spacing: 1px;
     
-    /* This creates the bean shape */
+    /* Retain the bean shape */
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.4);
+    outline: none; /* Remove default focus outline */
 }
 
 .bean-button:hover {
-    background-color: #1b5e20;
-    transform: scale(1.05); /* Grows slightly when hovered */
+    background-color: #e66738; /* Slightly darker coral */
+    transform: scale(1.1); /* More pronounced growth */
+    box-shadow: 0 6px 20px rgba(255, 127, 80, 0.6);
 }
 
 .bean-button:active {
-    transform: scale(0.95); /* Shrinks when clicked */
+    transform: scale(0.95) translateY(2px); /* Sink down on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* COUNTER/MESSAGE STYLES */
+#counterDisplay {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /* UTILITY */
 .hidden {
     display: none;
-    color: #d84315; /* Burnt orange for the bark text */
+    color: #cc3300; /* Richer red-orange for the bark text */
     font-weight: bold;
-    font-size: 1.5rem;
-    margin-top: 10px;
+    font-size: 2rem; /* Larger bark text */
+    margin-top: 15px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-header);
+    color: #f7f7f7;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* Media Query for smaller screens to ensure gallery works well */
+@media (max-width: 500px) {
+    .gallery-item {
+        max-width: 45%;
+    }
 }
