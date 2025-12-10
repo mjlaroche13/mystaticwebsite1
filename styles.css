@@ -1,0 +1,86 @@
+/* GLOBAL SETTINGS */
+body {
+    background-color: #e8f5e9; /* Very light mint green */
+    color: #1b5e20; /* Dark forest green for text */
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #4caf50; /* Standard Green */
+    color: white;
+    padding: 2rem;
+    border-bottom: 5px solid #2e7d32;
+}
+
+/* CARDS (The white boxes) */
+.card {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid #a5d6a7;
+}
+
+/* IMAGES */
+img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.main-photo {
+    /* Makes the main profile picture a circle */
+    border-radius: 50%; 
+    border: 5px solid #81c784;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* THE "BEAN" THEME */
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 30%;
+}
+
+/* Making the button look like a Kidney Bean */
+.bean-button {
+    background-color: #2e7d32;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    
+    /* This creates the bean shape */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.bean-button:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05); /* Grows slightly when hovered */
+}
+
+.bean-button:active {
+    transform: scale(0.95); /* Shrinks when clicked */
+}
+
+/* UTILITY */
+.hidden {
+    display: none;
+    color: #d84315; /* Burnt orange for the bark text */
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
